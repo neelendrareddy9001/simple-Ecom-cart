@@ -4,6 +4,13 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useThemeHook} from './GlobalComponents/ThemeProvider'
 import Header from './components/Header';
+import {Router} from '@reach/router'
+
+//Pages
+import Home from './pages/Home'
+import Cart from './pages/Cart'
+import SignIn from './pages/SignIn';
+import Register from './pages/Register';
 
 function App() {
   const [theme] = useThemeHook();
