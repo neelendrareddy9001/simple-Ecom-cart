@@ -18,6 +18,12 @@ function App() {
     <div className="App">
         <main className={theme? 'bg-black' : 'bg-light-2'} style={{ height: '100vh', overflowY: 'auto'}}>
           <Header/>
+          <Router>
+            <Home path="/" />
+            <SignIn path="sign-in"/>
+            <React path="/register"/>
+            <Cart path="/cart"/>
+          </Router>
         </main>
     </div>
   )
