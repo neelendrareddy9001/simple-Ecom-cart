@@ -11,14 +11,16 @@ const Cart = () => {
         isEmpty,
         totaUniqueItem,
         totalItems,
-        items
+        items,
+        cartTotal,
+        updateItemQuantity,
+        removeItem,
+        emptyCart,
     } = useCart();
     
     
     return (
-        <div style={{height : '100vh', width : '100vw', background : 'green'}}>
-            Cart Page
-        </div>
+        
     )
 }
 
