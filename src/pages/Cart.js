@@ -20,7 +20,11 @@ const Cart = () => {
     
     
     return (
-        
+        <Container className='py-4 mt-5'>
+            <h1 className={`${theme? 'text-light' : 'text-light-primary'} my-5 text-center`}>
+               {isEmpty? 'your Cart is' : 'The Cart'} 
+            </h1>
+        </Container>
     )
 }
 
