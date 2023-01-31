@@ -12,6 +12,17 @@ const SignIn = () => {
     const [loading, setLoading] = useState(false);
     const [theme] = useThemeHook();
     
+    const handleSubmit = (event)=>{
+        const form = event.currentTarget;
+        event.preventDefault();
+        const username = form.username.value;
+        const password = form.password.value;
+        if(username && password){
+            setLoading(true);
+            console.log(username, password);
+        }
+    }
+    
     return (
        <Container className='py-5 mt-5'>
             <Row className='justify-content-center mt-5'>
@@ -19,7 +30,7 @@ const SignIn = () => {
                     <h1 className={`text-center border-bottom pb-3 ${theme? 'text-dark-primary' : 'text-light-primary'}`}>
                         Sign In
                     </h1>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                         <InputGroup className='mb-4 mt-5'>
                             <InputGroup.Text>
                                 <AiOutlineUser size="1.8rem"/>
