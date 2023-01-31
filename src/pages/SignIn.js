@@ -3,6 +3,10 @@ import { Container, Row, Col, Button, From, Spinner,InputGroup } from 'react-boo
 import { useThemeHook } from '../GlobalComponents/ThemeProvider'
 import {Link} from '@reach/router'
 
+//icons
+import { AiOutlineUser } from 'react-icons/ai';
+import { VscKey } from 'react-icons/vsc';
+
 const SignIn = () => {
     
     const [loading, setLoading] = useState(false);
@@ -17,8 +21,16 @@ const SignIn = () => {
                     </h1>
                     <Form>
                         <InputGroup className='mb-4 mt-5'>
-                            <InputGroup.Text>@</InputGroup.Text>
+                            <InputGroup.Text>
+                                <AiOutlineUser size="1.8rem"/>
+                            </InputGroup.Text>
                             <Form.Control name="username" type="text" placeholder='Username' minLength={3}required/>
+                        </InputGroup>
+                        <InputGroup className='mb-4 mt-5'>
+                            <InputGroup.Text>
+                               <VscKey size="1.8rem"/>
+                            </InputGroup.Text>
+                            <Form.Control name="password" type="password" placeholder='Password' minLength={8}required/>
                         </InputGroup>
                     </Form>
                 </Col>
