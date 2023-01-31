@@ -21,7 +21,7 @@ function App() {
           <Router>
             <Home path="/" />
             <SignIn path="sign-in"/>
-            <React path="/register"/>
+            <Register path="/register"/>
             <Cart path="/cart"/>
           </Router>
         </main>
