@@ -3,10 +3,11 @@ import { Container, Row, Col, InputGroup, FormControl } from "react-bootstrap";
 import { useThemeHook } from "../GlobalComponents/ThemeProvider";
 import { BiSearch } from "react-icons/bi";
 import SearchFilter from "react-filter-search";
+import ProductCard from "../components/ProductCard";
 
 const Home = () => {
   const [theme] = useThemeHook();
-  const [searchInput, setSearchInput] = useState();
+  const [searchInput, setSearchInput] = useState("");
   const [productData, setProductData] = useState([]);
 
   async function getResponse() {
@@ -47,6 +48,17 @@ const Home = () => {
             />
           </InputGroup>
         </Col>
+        <SearchFilter
+          value={searchInput}
+          data={productData}
+          renderResults={(results) => (
+            <Row className="justify-content-center">
+              {results.map((item, i) => (
+                <ProductCard data={item} key={i} />
+              ))}
+            </Row>
+          )}
+        />
       </Row>
     </Container>
   );
