@@ -11,14 +11,16 @@ const Home = () => {
   const [productData, setProductData] = useState([]);
 
   async function getResponse() {
-    const res = fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => console.log(json));
+    const res = await fetch("https://api.escuelajs.co/api/v1/products").then(
+      (res) => res.json()
+    );
+    setProductData(await res);
   }
+
   useEffect(() => {
     getResponse();
-    console.log(productData);
   }, []);
+
   return (
     <Container className="py-4">
       <Row className="justify-content-center">

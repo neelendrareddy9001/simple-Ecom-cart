@@ -12,14 +12,18 @@ const ProductCard = (props) => {
     addItem(props.data);
   };
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="holder.js/100px*180" />
+    <Card
+      style={{ width: "18rem" }}
+      className={`${
+        theme ? "bg-light text-black" : "bg-light text-dark"
+      } text-center p-0 overflow-hidden shadow mx-auto mb-4`}
+    >
+      <Card.Img variant="top" src={image} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build onn the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Title>{title}</Card.Title>
+        <Card.Title>
+          Rs.<span className="h3">{price}</span>
+        </Card.Title>
         <Button variant="primary">Go Somewhere</Button>
       </Card.Body>
     </Card>
