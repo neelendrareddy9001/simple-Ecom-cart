@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+// import ReactDOM from "react-dom/client";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useThemeHook } from "./GlobalComponents/ThemeProvider";
@@ -12,6 +12,7 @@ import Cart from "./pages/Cart";
 import SignIn from "./pages/SignIn";
 import Register from "./pages/Register";
 import ProductDetails from "./components/ProductDetails";
+import MyAccount from "./pages/MyAccount";
 
 function App() {
   const [theme] = useThemeHook();
@@ -24,10 +25,11 @@ function App() {
         <Header />
         <Router>
           <Home path="/" />
-          <Cart path="/cart" />
-          <ProductDetails path="product-details/:productId" />
+          <MyAccount path="my-account" />
           <SignIn path="sign-in" />
-          <Register path="/register" />
+          <Register path="register" />
+          <ProductDetails path="product-details/:productId" />
+          <Cart path="/cart" />
         </Router>
       </main>
     </div>
